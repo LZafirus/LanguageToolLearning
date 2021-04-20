@@ -1,1 +1,1 @@
-<% response.sendRedirect("dictionary/list"); %>
+<% response.sendRedirect("login/loginPage"); %>

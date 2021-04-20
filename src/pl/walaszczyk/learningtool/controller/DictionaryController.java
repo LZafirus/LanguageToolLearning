@@ -9,6 +9,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class DictionaryController {
 
 	
+	/*
+	 * All words here - as a list 
+	 * 
+	 * at the top - search field with button
+	 * 
+	 * table with headers to sort 
+	 */
+	
 	@RequestMapping("/list")
 	public String listDictionary(Model theModel) {
 		
