@@ -1,5 +1,11 @@
 package pl.walaszczyk.learningtool.dao;
 
-public class WordDAO {
+import java.util.List;
 
+import pl.walaszczyk.learningtool.entity.Word;
+
+public interface WordDAO {
+
+	public List<Word> getWords();
+	
 }
