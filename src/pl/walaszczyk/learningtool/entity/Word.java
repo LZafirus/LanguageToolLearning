@@ -14,13 +14,13 @@ public class Word {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
-	int id;
+	private int id;
 	
 	@Column(name="polish_word")
-	String polishWord;
+	private String polishWord;
 	
 	@Column(name="foreign_word")
-	String foreignWord;
+	private String foreignWord;
 
 	public int getId() {
 		return id;

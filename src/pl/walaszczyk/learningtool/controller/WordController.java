@@ -12,7 +12,7 @@ import pl.walaszczyk.learningtool.entity.Word;
 
 @Controller
 @RequestMapping("/dictionary")
-public class DictionaryController {
+public class WordController {
 
 	
 	/*
@@ -27,7 +27,7 @@ public class DictionaryController {
 	private WordDAO wordDAO;
 	
 	@RequestMapping("/list")
-	public String listDictionary(Model theModel) {
+	public String listWords(Model theModel) {
 		
 		List<Word> words = wordDAO.getWords();
 		

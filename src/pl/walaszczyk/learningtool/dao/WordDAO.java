@@ -8,4 +8,8 @@ public interface WordDAO {
 
 	public List<Word> getWords();
 	
+	public Word getWord();
+	
+	
+	
 }

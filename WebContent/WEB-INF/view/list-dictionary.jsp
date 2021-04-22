@@ -27,9 +27,14 @@
 					<th>Polish: </th>
 					<th>Foreign: </th>	
 				</tr>
-			<c:forEach var=
+			<c:forEach var="tempWord" items="${words}">
 			
+				<tr>
+					<td>${tempWord.polishWord}</td>
+					<td>${tempWord.foreignWord}</td>
+				</tr>
 			
+			</c:forEach>
 			</table>
 		
 		</div>
