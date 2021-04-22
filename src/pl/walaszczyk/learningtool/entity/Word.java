@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="dictionary")
+@Table(name="words")
 public class Word {
 	
 	@Id
@@ -48,8 +48,7 @@ public class Word {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
+		return "Word [id=" + id + ", polishWord=" + polishWord + ", foreignWord=" + foreignWord + "]";
 	}
 
 	public Word(int id, String polishWord, String foreignWord) {

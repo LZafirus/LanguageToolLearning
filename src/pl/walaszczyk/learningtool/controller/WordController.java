@@ -11,7 +11,7 @@ import pl.walaszczyk.learningtool.dao.WordDAO;
 import pl.walaszczyk.learningtool.entity.Word;
 
 @Controller
-@RequestMapping("/dictionary")
+@RequestMapping("/words")
 public class WordController {
 
 	
@@ -33,7 +33,7 @@ public class WordController {
 		
 		theModel.addAttribute("words", words);
 		
-		return "list-dictionary";
+		return "list-words";
 	}
 	
 }

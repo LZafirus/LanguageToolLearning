@@ -17,13 +17,13 @@ public class WordDAOImpl implements WordDAO {
 	@Autowired
 	SessionFactory sessionFactory;
 
-	@Transactional
 	@Override
+	@Transactional
 	public List<Word> getWords() {
 		
 		Session currentSession = sessionFactory.getCurrentSession();
 		
-		Query<Word> query = currentSession.createQuery("from dictionary", Word.class);
+		Query<Word> query = currentSession.createQuery("from Word ", Word.class);
 		
 		List<Word> words = query.getResultList();
 		
