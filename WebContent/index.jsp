@@ -1,1 +1,1 @@
-<% response.sendRedirect("login/loginPage"); %>
+<% response.sendRedirect("words/list"); %>

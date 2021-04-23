@@ -4,7 +4,7 @@
 <html>
 
 <head>
-	<title>List Customers</title>
+	<title>Dictionary</title>
 	
 	<!-- reference our style sheet -->
 
@@ -19,7 +19,7 @@
 	<div id="wrapper">
 		<div id="header">
 		
-			<h2> Title here..</h2>
+			<h2> Full dictionary</h2>
 		</div>
 	
 	</div>

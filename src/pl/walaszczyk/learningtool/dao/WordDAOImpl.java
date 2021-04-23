@@ -18,7 +18,6 @@ public class WordDAOImpl implements WordDAO {
 	SessionFactory sessionFactory;
 
 	@Override
-	@Transactional
 	public List<Word> getWords() {
 		
 		Session currentSession = sessionFactory.getCurrentSession();
