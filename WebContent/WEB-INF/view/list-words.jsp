@@ -30,14 +30,29 @@
 			
 			<table>
 				<tr>
-					<th>Polish: </th>
-					<th>Foreign: </th>	
+					<th>Polish word: </th>
+					<th>Foreign word: </th>
+					<th>Action: </th>	
 				</tr>
 			<c:forEach var="tempWord" items="${words}">
-			
+				
+				<c:url var="updateLink" value="/words/updateWordForm">
+					<c:param name="wordId" value="${tempWord.id}"/>
+				</c:url>
+				
+				<c:url var="deleteLink" value="/words/deleteWord">
+					<c:param name="wordId" value="${tempWord.id}"/>
+				</c:url>
+				
 				<tr>
 					<td>${tempWord.polishWord}</td>
 					<td>${tempWord.foreignWord}</td>
+					<td>
+						<a href="${updateLink}">Update</a>
+						|
+						<a href="${deleteLink}"
+						onclick="if (!(confirm('Are you sure you want to remove this item?'))) return false">Delete</a>
+					</td>
 				</tr>
 			
 			</c:forEach>

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import pl.walaszczyk.learningtool.dao.WordDAO;
@@ -36,6 +37,17 @@ public class WordController {
 		theModel.addAttribute("words", words);
 		
 		return "list-words";
+	}
+	
+	@PostMapping("/updateWordForm")
+	public String updateWord(Model theModel) {
+		
+		return "update-word";
+	}
+	
+	@GetMapping("/deleteWord")
+	public String deleteWord(Model theModel) {
+		return "delete-word";
 	}
 	
 }
