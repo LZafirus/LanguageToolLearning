@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import pl.walaszczyk.learningtool.dao.WordDAO;
 import pl.walaszczyk.learningtool.entity.Word;
@@ -46,8 +47,11 @@ public class WordController {
 	}
 	
 	@GetMapping("/deleteWord")
-	public String deleteWord(Model theModel) {
-		return "delete-word";
+	public String deleteWord(@RequestParam("wordId") int id, Model theModel) {
+		
+		wordService.deleteWord(id);
+		
+		return "redirect:/words/list";
 	}
 	
 }

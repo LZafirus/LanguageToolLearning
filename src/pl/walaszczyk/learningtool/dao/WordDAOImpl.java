@@ -35,6 +35,19 @@ public class WordDAOImpl implements WordDAO {
 		return null;
 	}
 
+	@Override
+	public void deleteWord(int id) {
+		
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		Query<Word> query = currentSession.createQuery("delete from Word where id=:wordId");
+		
+		query.setParameter("wordId", id);
+		
+		query.executeUpdate();
+		
+	}
+
 	
 	
 	

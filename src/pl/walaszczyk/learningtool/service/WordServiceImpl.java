@@ -14,7 +14,13 @@ public class WordServiceImpl implements WordService {
 	
 	@Autowired
 	private WordDAO wordDAO;
-
+	
+	@Override
+	@Transactional
+	public List<Word> getWords() {
+		return wordDAO.getWords();
+	}
+	
 	@Override
 	public void saveWord(Word word) {
 		// TODO Auto-generated method stub
@@ -28,9 +34,9 @@ public class WordServiceImpl implements WordService {
 	}
 
 	@Override
+	@Transactional
 	public void deleteWord(int id) {
-		// TODO Auto-generated method stub
-		
+		wordDAO.deleteWord(id);
 	}
 
 	@Override
@@ -39,10 +45,6 @@ public class WordServiceImpl implements WordService {
 		return null;
 	}
 
-	@Override
-	@Transactional
-	public List<Word> getWords() {
-		return wordDAO.getWords();
-	}
+	
 
 }

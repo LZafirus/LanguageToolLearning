@@ -10,6 +10,8 @@ public interface WordDAO {
 	
 	public Word getWord();
 	
+	public void deleteWord(int id);
+	
 	
 	
 }
