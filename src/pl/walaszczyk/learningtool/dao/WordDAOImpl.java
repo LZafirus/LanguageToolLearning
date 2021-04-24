@@ -48,6 +48,16 @@ public class WordDAOImpl implements WordDAO {
 		
 	}
 
+	@Override
+	public void updateWord(int id) {
+		
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		Query<Word> query = currentSession.createQuery("UPDATE Words SET polish_word= :polishWord " +
+														);
+		
+	}
+
 	
 	
 	

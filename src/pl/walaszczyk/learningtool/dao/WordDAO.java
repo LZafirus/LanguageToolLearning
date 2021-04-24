@@ -12,6 +12,8 @@ public interface WordDAO {
 	
 	public void deleteWord(int id);
 	
+	public void updateWord(int id);
+	
 	
 	
 }
