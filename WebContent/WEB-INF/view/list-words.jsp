@@ -24,6 +24,11 @@
 	
 	</div>
 	
+	<input type="button" value="Add a word"
+					onclick="window.open(href='addWord','width=1800', 'height=600')"
+					class="add-button"
+		/>
+	
 	<div id="container">
 	
 		<div id="content">

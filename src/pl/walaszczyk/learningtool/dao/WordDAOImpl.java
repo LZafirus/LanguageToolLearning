@@ -54,7 +54,7 @@ public class WordDAOImpl implements WordDAO {
 		Session currentSession = sessionFactory.getCurrentSession();
 		
 		Query<Word> query = currentSession.createQuery("UPDATE Words SET polish_word= :polishWord " +
-														);
+												""		);
 		
 	}
 
