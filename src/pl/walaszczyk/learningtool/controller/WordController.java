@@ -46,6 +46,11 @@ public class WordController {
 		return "update-word";
 	}
 	
+	@GetMapping("/addWord")
+	public String addWord(Model theModel) {
+		return "addWord-form";
+	}
+	
 	@GetMapping("/deleteWord")
 	public String deleteWord(@RequestParam("wordId") int id, Model theModel) {
 		
