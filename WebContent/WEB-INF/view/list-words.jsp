@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 
 <html>
@@ -6,8 +7,6 @@
 <head>
 	<title>Dictionary</title>
 	
-	<!-- reference our style sheet -->
-
 	<link type="text/css"
 		  rel="stylesheet"
 		  href="${pageContext.request.contextPath}/resources/css/style.css" />
@@ -25,7 +24,8 @@
 	</div>
 	
 	<input type="button" value="Add a word"
-					onclick="window.open(href='addWord','width=1800', 'height=600')"
+					
+					onclick="window.open(href='addWord','','location=yes,height=570,width=520,scrollbars=yes,status=yes')"
 					class="add-button"
 		/>
 	

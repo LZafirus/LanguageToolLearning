@@ -14,11 +14,14 @@
 			href="${pageContext.request.contextPath}/resources/css/add-customer-style.css">
 	
 	</head>
-
+	<div id="wrapper">
+		<div id="header">
 	<body>
 		<h2>Adding a word to your dictionary..</h2>
 		
-		<div>
+		</div>
+	</div>
+			<div id="container">
 			<form:form action="saveWord" modelAttribute="word" method="POST">	
 				
 				<form:hidden path="id"/>
