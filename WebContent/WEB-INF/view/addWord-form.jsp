@@ -1,4 +1,5 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 
 <html>
@@ -11,31 +12,38 @@
 		
 		<link type="text/css"
 			rel="stylesheet"
-			href="${pageContext.request.contextPath}/resources/css/add-customer-style.css">
+			href="${pageContext.request.contextPath}/resources/css/add-style.css">
 	
 	</head>
-	<div id="wrapper">
-		<div id="header">
+
 	<body>
+		<div id="wrapper">
+		<div id="header">
 		<h2>Adding a word to your dictionary..</h2>
 		
 		</div>
 	</div>
 			<div id="container">
-			<form:form action="saveWord" modelAttribute="word" method="POST">	
+			<h3>Add to dictionary</h3>
+			<form:form action="saveWord" modelAttribute="words" method="POST">	
 				
-				<form:hidden path="id"/>
+			<!-- <form:hidden path="id"/> -->	
 				
 				<table>
 					<tbody>
 						<tr>
-							<td><label>Polish word:</label></td>
+							<td><form:label path="polishWord">Polish word:</form:label></td>
 							<td><form:input path="polishWord"/></td>
 						</tr>
 						
 						<tr>
-							<td><label>Foreign word:</label></td>
+							<td><form:label path="foreignWord">Foreign word:</form:label></td>
 							<td><form:input path="foreignWord"/></td>
+						</tr>
+						
+						<tr>
+							<td><label></label></td>
+						<td><input type="submit" value="Save" class="save"/></td>
 						</tr>
 					</tbody>
 				</table>

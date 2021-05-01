@@ -43,11 +43,16 @@ public class WordController {
 	@PostMapping("/updateWordForm")
 	public String updateWord(Model theModel) {
 		
+		
+		
 		return "update-word";
 	}
 	
 	@GetMapping("/addWord")
 	public String addWord(Model theModel) {
+		Word word = new Word();
+		
+		theModel.addAttribute("words", word);
 		return "addWord-form";
 	}
 	
