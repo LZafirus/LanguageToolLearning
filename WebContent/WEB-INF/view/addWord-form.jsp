@@ -50,10 +50,6 @@
 			
 			<div style="clear; both'"></div>
 			
-			<p>
-				<a href="${pageContext.request.contextPath}/words/list">Back to dictionary</a>
-			</p>
-			
 			</form:form>
 		</div>
 	</body>

@@ -17,20 +17,16 @@
 
 	<div id="wrapper">
 		<div id="header">
-		
 			<h2> Full dictionary</h2>
 		</div>
-	
 	</div>
 	
-	<input type="button" value="Add a word"
-					
-					onclick="window.open(href='addWord','','location=yes,height=570,width=520,scrollbars=yes,status=yes')"
+	<input type="button" value="Add a word"	
+					onclick="window.open(href='addWordForm','','location=yes,height=570,width=520,scrollbars=yes,status=yes')"
 					class="add-button"
-		/>
+	/>
 	
 	<div id="container">
-	
 		<div id="content">
 			
 			<table>
@@ -62,10 +58,9 @@
 			
 			</c:forEach>
 			</table>
-		
 		</div>
-	
 	</div>
+	
 	
 </body>
 

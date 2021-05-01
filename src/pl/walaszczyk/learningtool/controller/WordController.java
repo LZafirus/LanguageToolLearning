@@ -48,7 +48,7 @@ public class WordController {
 		return "update-word";
 	}
 	
-	@GetMapping("/addWord")
+	@GetMapping("/addWordForm")
 	public String addWord(Model theModel) {
 		Word word = new Word();
 		
