@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,6 +19,8 @@ import pl.walaszczyk.learningtool.service.WordService;
 @RequestMapping("/words")
 public class WordController {
 
+	@Autowired
+	private WordService wordService;	
 	
 	/*
 	 * All words here - as a list 
@@ -27,8 +30,10 @@ public class WordController {
 	 * table with headers to sort 
 	 */
 	
-	@Autowired
-	private WordService wordService;
+
+	/*
+	 * Shows main page of dictionary / done
+	 */
 	
 	@GetMapping("/list")
 	public String listWords(Model theModel) {
@@ -40,21 +45,43 @@ public class WordController {
 		return "list-words";
 	}
 	
-	@PostMapping("/updateWordForm")
-	public String updateWord(Model theModel) {
-		
-		
-		
-		return "update-word";
-	}
+	/*
+	 *  Shows form to add a word
+	 */
 	
 	@GetMapping("/addWordForm")
 	public String addWord(Model theModel) {
+		
 		Word word = new Word();
 		
 		theModel.addAttribute("words", word);
 		return "addWord-form";
 	}
+	
+	/*
+	 *  Method to add a word
+	 */
+	
+	@PostMapping("/saveWord")
+	public String saveWord(@ModelAttribute("words") Word word) {
+		
+		wordService.saveWord(word);
+		
+		return "addWord-form";
+	}
+	
+	/*
+	 *  Shows form to update a word
+	 */
+	@PostMapping("/updateWordForm")
+	public String updateWord(Model theModel) {
+		
+		return "update-word";
+	}	
+	
+	/*
+	 *  Delete method / done
+	 */
 	
 	@GetMapping("/deleteWord")
 	public String deleteWord(@RequestParam("wordId") int id, Model theModel) {

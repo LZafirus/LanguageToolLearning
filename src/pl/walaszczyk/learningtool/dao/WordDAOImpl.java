@@ -22,7 +22,7 @@ public class WordDAOImpl implements WordDAO {
 		
 		Session currentSession = sessionFactory.getCurrentSession();
 		
-		Query<Word> query = currentSession.createQuery("from Word ", Word.class);
+		Query<Word> query = currentSession.createQuery("from Word order by polishWord", Word.class);
 		
 		List<Word> words = query.getResultList();
 		
@@ -40,7 +40,7 @@ public class WordDAOImpl implements WordDAO {
 		
 		Session currentSession = sessionFactory.getCurrentSession();
 		
-		Query<Word> query = currentSession.createQuery("delete from Word where id=:wordId");
+		Query query = currentSession.createQuery("delete from Word where id=:wordId");
 		
 		query.setParameter("wordId", id);
 		
@@ -55,6 +55,16 @@ public class WordDAOImpl implements WordDAO {
 		
 		Query<Word> query = currentSession.createQuery("UPDATE Words SET polish_word= :polishWord " +
 												""		);
+		
+	}
+
+	@Override
+	public void saveWord(Word word) {
+		
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		currentSession.saveOrUpdate(word);
+
 		
 	}
 

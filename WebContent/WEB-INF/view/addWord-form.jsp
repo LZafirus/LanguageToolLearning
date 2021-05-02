@@ -4,7 +4,7 @@
 
 <html>
 	<head>
-		<title>Adding word..</title>
+		<title>Adding words..</title>
 		
 		<link type="text/css"
 			rel="stylesheet"
@@ -27,7 +27,7 @@
 			<h3>Add to dictionary</h3>
 			<form:form action="saveWord" modelAttribute="words" method="POST">	
 				
-			<!-- <form:hidden path="id"/> -->	
+			<form:hidden path="id" />	
 				
 				<table>
 					<tbody>

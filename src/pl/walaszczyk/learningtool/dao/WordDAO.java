@@ -14,6 +14,6 @@ public interface WordDAO {
 	
 	public void updateWord(int id);
 	
-	
+	public void saveWord(Word word);
 	
 }

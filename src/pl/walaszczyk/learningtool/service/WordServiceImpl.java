@@ -22,9 +22,9 @@ public class WordServiceImpl implements WordService {
 	}
 	
 	@Override
+	@Transactional
 	public void saveWord(Word word) {
-		// TODO Auto-generated method stub
-		
+		wordDAO.saveWord(word);
 	}
 
 	@Override
@@ -40,6 +40,7 @@ public class WordServiceImpl implements WordService {
 	}
 
 	@Override
+	@Transactional
 	public List<Word> searchWords(String searchWord) {
 		// TODO Auto-generated method stub
 		return null;
