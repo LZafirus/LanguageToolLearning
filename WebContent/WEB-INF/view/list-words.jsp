@@ -22,8 +22,8 @@
 	</div>
 	
 	<input type="button" value="Add a word"	
-					onclick="window.open(href='addWordForm','','location=yes,height=570,width=520,scrollbars=yes,status=yes')"
-					class="add-button"
+	onclick="window.open(href='addWordForm','','location=yes,height=570,width=520,scrollbars=yes,status=yes')"
+	class="add-button"
 	/>
 	
 	<div id="container">

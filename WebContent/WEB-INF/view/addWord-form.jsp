@@ -43,8 +43,16 @@
 						
 						<tr>
 							<td><label></label></td>
-						<td><input type="submit" value="Save" class="save"/></td>
+							<td><input type="submit" value="Save" class="save"/></td>
 						</tr>
+						
+						<tr>
+							<td><label></label></td>
+							<td><input type="button" value="Close" 
+								onclick="window.close()" 
+								class="close-button"/></td>
+						</tr>
+						
 					</tbody>
 				</table>
 			

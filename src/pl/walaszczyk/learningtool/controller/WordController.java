@@ -74,9 +74,9 @@ public class WordController {
 	 *  Shows form to update a word
 	 */
 	@PostMapping("/updateWordForm")
-	public String updateWord(Model theModel) {
+	public String updateWordForm(Model theModel) {
 		
-		return "update-word";
+		return "updateWordForm";
 	}	
 	
 	/*
