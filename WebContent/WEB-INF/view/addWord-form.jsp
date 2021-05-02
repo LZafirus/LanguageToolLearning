@@ -4,7 +4,7 @@
 
 <html>
 	<head>
-		<title>Adding words..</title>
+		<title>Update a word</title>
 		
 		<link type="text/css"
 			rel="stylesheet"
@@ -19,12 +19,12 @@
 	<body>
 		<div id="wrapper">
 		<div id="header">
-		<h2>Adding a word to your dictionary..</h2>
+		<h2>Changing details</h2>
 		
 		</div>
 	</div>
 			<div id="container">
-			<h3>Add to dictionary</h3>
+			<h3>Update chosen word:</h3>
 			<form:form action="saveWord" modelAttribute="words" method="POST">	
 				
 			<form:hidden path="id" />	

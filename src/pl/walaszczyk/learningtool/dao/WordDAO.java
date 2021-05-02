@@ -8,7 +8,7 @@ public interface WordDAO {
 
 	public List<Word> getWords();
 	
-	public Word getWord();
+	public Word getWord(int id);
 	
 	public void deleteWord(int id);
 	

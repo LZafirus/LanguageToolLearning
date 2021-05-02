@@ -46,7 +46,7 @@ public class WordController {
 	}
 	
 	/*
-	 *  Shows form to add a word
+	 *  Shows form to add a word / done
 	 */
 	
 	@GetMapping("/addWordForm")
@@ -59,7 +59,7 @@ public class WordController {
 	}
 	
 	/*
-	 *  Method to add a word
+	 *  Method to add a word / done
 	 */
 	
 	@PostMapping("/saveWord")
@@ -73,8 +73,13 @@ public class WordController {
 	/*
 	 *  Shows form to update a word
 	 */
-	@PostMapping("/updateWordForm")
-	public String updateWordForm(Model theModel) {
+	@GetMapping("/updateWordForm")
+	public String updateWordForm(@RequestParam("wordId") int id, Model theModel) {
+		
+		Word word = wordService.getWord(id);
+		
+		
+		theModel.addAttribute("words", word);
 		
 		return "updateWordForm";
 	}	

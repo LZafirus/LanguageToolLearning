@@ -16,4 +16,6 @@ public interface WordService {
 	
 	public List<Word> getWords();
 
+	public void updateWord(int id);
+
 }

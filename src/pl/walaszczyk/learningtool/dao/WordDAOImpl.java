@@ -30,9 +30,12 @@ public class WordDAOImpl implements WordDAO {
 	}
 
 	@Override
-	public Word getWord() {
-		// TODO Auto-generated method stub
-		return null;
+	public Word getWord(int id) {
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		Word word = currentSession.get(Word.class, id);
+		
+		return word;		
 	}
 
 	@Override
