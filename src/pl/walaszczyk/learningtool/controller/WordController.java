@@ -39,7 +39,6 @@ public class WordController {
 	public String listWords(Model theModel) {
 		
 		List<Word> words = wordService.getWords();
-		
 		theModel.addAttribute("words", words);
 		
 		return "list-words";
@@ -70,6 +69,13 @@ public class WordController {
 		return "addWord-form";
 	}
 	
+	@PostMapping("/saveEdited")
+	public String saveWordEdited(@ModelAttribute("words") Word word) {
+		wordService.saveWord(word);
+		
+		return "redirect:/words/list";
+	}
+	
 	/*
 	 *  Shows form to update a word
 	 */
@@ -77,8 +83,6 @@ public class WordController {
 	public String updateWordForm(@RequestParam("wordId") int id, Model theModel) {
 		
 		Word word = wordService.getWord(id);
-		
-		
 		theModel.addAttribute("words", word);
 		
 		return "updateWordForm";
@@ -92,7 +96,7 @@ public class WordController {
 	public String deleteWord(@RequestParam("wordId") int id, Model theModel) {
 		
 		wordService.deleteWord(id);
-		
+
 		return "redirect:/words/list";
 	}
 	
