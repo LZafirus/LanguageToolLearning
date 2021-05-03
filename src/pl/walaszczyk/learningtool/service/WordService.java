@@ -15,7 +15,4 @@ public interface WordService {
 	public List<Word> searchWords(String searchWord);
 	
 	public List<Word> getWords();
-
-	public void updateWord(int id);
-
 }

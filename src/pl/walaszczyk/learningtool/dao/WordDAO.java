@@ -11,9 +11,9 @@ public interface WordDAO {
 	public Word getWord(int id);
 	
 	public void deleteWord(int id);
-	
-	public void updateWord(int id);
-	
+		
 	public void saveWord(Word word);
+
+	public List<Word> searchWords(String searchWord);
 	
 }

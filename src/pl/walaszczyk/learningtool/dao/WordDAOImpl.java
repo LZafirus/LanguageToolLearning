@@ -48,17 +48,6 @@ public class WordDAOImpl implements WordDAO {
 		query.setParameter("wordId", id);
 		
 		query.executeUpdate();
-		
-	}
-
-	@Override
-	public void updateWord(int id) {
-		
-		Session currentSession = sessionFactory.getCurrentSession();
-		
-		Query<Word> query = currentSession.createQuery("UPDATE Words SET polish_word= :polishWord " +
-												""		);
-		
 	}
 
 	@Override
@@ -66,12 +55,20 @@ public class WordDAOImpl implements WordDAO {
 		
 		Session currentSession = sessionFactory.getCurrentSession();
 		
-		currentSession.saveOrUpdate(word);
-
-		
+		currentSession.saveOrUpdate(word);		
 	}
 
-	
-	
-	
+	@Override
+	public List<Word> searchWords(String searchWord) {
+		
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		Query query = currentSession.createQuery("from Word where lower(polishWord) like :theWord or lower(foreignWord) like :theWord", Word.class);
+		
+		query.setParameter("theWord",  "%" + searchWord.toLowerCase() + "%");
+		
+		List<Word> words = query.getResultList();
+		
+		return words;
+	}	
 }

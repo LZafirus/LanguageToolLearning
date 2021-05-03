@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import pl.walaszczyk.learningtool.dao.WordDAO;
 import pl.walaszczyk.learningtool.entity.Word;
 import pl.walaszczyk.learningtool.service.WordService;
 
@@ -98,6 +97,19 @@ public class WordController {
 		wordService.deleteWord(id);
 
 		return "redirect:/words/list";
-	}
+	}	
 	
+	/*
+	 *  Search method
+	 */
+	
+	@GetMapping("/search")
+	public String searchWord(@RequestParam("theSearchWord") String searchWord, Model theModel) {
+		
+		List<Word> words = wordService.searchWords(searchWord);
+		
+		theModel.addAttribute(words);
+		
+		return "list-words";
+	}
 }

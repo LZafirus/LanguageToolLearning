@@ -28,6 +28,12 @@
 	class="add-button"
 	/>
 	
+	<form:form action="search" method="GET">
+		Search word: <input type="text" name="theSearchWord" />
+		
+		<input type="submit" value="Search" class="add-button" />
+	</form:form>
+
 	<div id="container">
 		<div id="content">
 			

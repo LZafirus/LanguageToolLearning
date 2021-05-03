@@ -42,15 +42,6 @@ public class WordServiceImpl implements WordService {
 	@Override
 	@Transactional
 	public List<Word> searchWords(String searchWord) {
-		// TODO Auto-generated method stub
-		return null;
+		return wordDAO.searchWords(searchWord);
 	}
-
-	@Override
-	public void updateWord(int id) {
-		wordDAO.updateWord(id);
-	}
-
-	
-
 }
