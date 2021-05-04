@@ -58,14 +58,26 @@ public class WordDAOImpl implements WordDAO {
 		currentSession.saveOrUpdate(word);		
 	}
 
+	/*
+	 *  Add a one more security to check DB if there is such word???
+	 */
+	
 	@Override
 	public List<Word> searchWords(String searchWord) {
 		
 		Session currentSession = sessionFactory.getCurrentSession();
 		
-		Query query = currentSession.createQuery("from Word where lower(polishWord) like :theWord or lower(foreignWord) like :theWord", Word.class);
+		Query query = null;
 		
-		query.setParameter("theWord",  "%" + searchWord.toLowerCase() + "%");
+		if(searchWord != null && searchWord.trim().length() > 0 ) {
+		
+		query = currentSession.createQuery("from Word where lower(polishWord) like :theWord or lower(foreignWord) like :theWord", Word.class);
+		
+		query.setParameter("theWord", "%" + searchWord.toLowerCase() + "%");
+		
+		} else {
+			query = currentSession.createQuery("from Word ", Word.class);
+		}
 		
 		List<Word> words = query.getResultList();
 		

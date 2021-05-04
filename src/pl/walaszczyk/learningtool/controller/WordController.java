@@ -108,7 +108,7 @@ public class WordController {
 		
 		List<Word> words = wordService.searchWords(searchWord);
 		
-		theModel.addAttribute(words);
+		theModel.addAttribute("words", words);
 		
 		return "list-words";
 	}
