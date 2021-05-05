@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import pl.walaszczyk.learningtool.entity.Word;
+import pl.walaszczyk.learningtool.utility.SortUtils;
 
 @Repository
 public class WordDAOImpl implements WordDAO {
@@ -18,11 +19,29 @@ public class WordDAOImpl implements WordDAO {
 	SessionFactory sessionFactory;
 
 	@Override
-	public List<Word> getWords() {
+	public List<Word> getWords(int theSortField) {
 		
 		Session currentSession = sessionFactory.getCurrentSession();
 		
-		Query<Word> query = currentSession.createQuery("from Word order by polishWord", Word.class);
+		String theFieldName = null;
+		
+		switch(theSortField) {
+			case SortUtils.POLISH_WORD:
+				theFieldName = "polishWord";
+				break;
+			case SortUtils.FOREIGN_WORD:
+				theFieldName = "foreignWord";
+				break;
+//			case SortUtils.CATEGORY:
+//				theFieldName = "category";
+//				break;
+			default:
+				theFieldName = "polishWord";
+		}
+		
+		String queryString = "from Word order by " + theFieldName;
+		
+		Query<Word> query = currentSession.createQuery(queryString, Word.class);
 		
 		List<Word> words = query.getResultList();
 		

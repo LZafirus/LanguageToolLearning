@@ -1,5 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ page import="pl.walaszczyk.learningtool.utility.SortUtils" %>
+
 <!DOCTYPE html>
 
 <html>
@@ -38,10 +40,22 @@
 		<div id="content">
 			
 			<table>
+				<c:url var="sortLinkPolishWord" value="/words/list">
+					<c:param name="sort" value="<%=  Integer.toString(SortUtils.POLISH_WORD) %>"/>
+				</c:url>
+				
+				<c:url var="sortLinkForeignWord" value="/words/list">
+					<c:param name="sort" value="<%= Integer.toString(SortUtils.FOREIGN_WORD) %>"/>
+				</c:url>
+				
+				<c:url var="sortLinkCategory" value="/words/list">
+					<c:param name="sort" value="<%= Integer.toString(SortUtils.CATEGORY) %>"/>
+				</c:url>
+			
 				<tr>
-					<th>Polish word: </th>
-					<th>Foreign word: </th>
-					<th>Action: </th>	
+					<th><a href="${sortLinkPolishWord}">Polish word: </a></th>
+					<th><a href="${sortLinkForeignWord}">Foreign word: </a></th>
+					<th>Action:</th>	
 				</tr>
 			<c:forEach var="tempWord" items="${words}">
 				

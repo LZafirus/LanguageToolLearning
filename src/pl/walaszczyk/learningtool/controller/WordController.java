@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import pl.walaszczyk.learningtool.entity.Word;
 import pl.walaszczyk.learningtool.service.WordService;
+import pl.walaszczyk.learningtool.utility.SortUtils;
 
 @Controller
 @RequestMapping("/words")
@@ -35,9 +36,18 @@ public class WordController {
 	 */
 	
 	@GetMapping("/list")
-	public String listWords(Model theModel) {
+	public String listWords(Model theModel, @RequestParam(required=false) String sort) {
 		
-		List<Word> words = wordService.getWords();
+		List<Word> words = null;
+		
+		if(sort != null) {
+			int theSortField = Integer.parseInt(sort);
+			words = wordService.getWords(theSortField);
+		}
+		else {
+			words = wordService.getWords(SortUtils.POLISH_WORD);
+		}
+		
 		theModel.addAttribute("words", words);
 		
 		return "list-words";

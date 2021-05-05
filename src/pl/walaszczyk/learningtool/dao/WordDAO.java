@@ -6,7 +6,7 @@ import pl.walaszczyk.learningtool.entity.Word;
 
 public interface WordDAO {
 
-	public List<Word> getWords();
+	public List<Word> getWords(int theSortField);
 	
 	public Word getWord(int id);
 	

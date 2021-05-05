@@ -14,5 +14,5 @@ public interface WordService {
 	
 	public List<Word> searchWords(String searchWord);
 	
-	public List<Word> getWords();
+	public List<Word> getWords(int theSortField);
 }
