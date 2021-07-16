@@ -21,10 +21,10 @@ public class TestDBServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String user = "languagemaster";
-		String pass = "languagestudent";
+		String user = "xxxxxx";
+		String pass = "xxxxxx";
 		
-		String jdbcUrl = "jdbc:mysql://localhost:3306/language_tool?useSSL=false";
+		String jdbcUrl = "jxxxxx";
 				
 		String driver = "com.mysql.jdbc.Driver";
 		
